@@ -2,14 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yunhenlxx.github.io/2021/03/24/123/</loc>
-    
-    <lastmod>2021-03-24</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yunhenlxx.github.io/2021/03/23/hello-world/</loc>
+    <loc>http://yunhenlxx.github.io/2021/03/24/%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B/</loc>
     
     <lastmod>2021-03-24</lastmod>
     
@@ -32,14 +25,7 @@
 
   
   <url>
-    <loc>http://yunhenlxx.github.io/tags/de/</loc>
-    <lastmod>2021-03-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://yunhenlxx.github.io/tags/dd/</loc>
+    <loc>http://yunhenlxx.github.io/tags/Python/</loc>
     <lastmod>2021-03-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -48,7 +34,7 @@
 
   
   <url>
-    <loc>http://yunhenlxx.github.io/categories/d/</loc>
+    <loc>http://yunhenlxx.github.io/categories/Python/</loc>
     <lastmod>2021-03-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
