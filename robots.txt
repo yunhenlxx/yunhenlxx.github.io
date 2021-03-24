@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+Allow: /archives/
+
+Disallow: /js/
+Disallow: /css/
+Disallow: /fonts/
+Disallow: /lib/
+Disallow: /fancybox/
+
+Sitemap: http://yunhenlxx.github.io/sitemap.xml       # 这里改为自己的网址路径
