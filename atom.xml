@@ -6,7 +6,7 @@
   <link href="http://yunhenlxx.github.io/atom.xml" rel="self"/>
   
   <link href="http://yunhenlxx.github.io/"/>
-  <updated>2021-03-24T06:12:54.973Z</updated>
+  <updated>2021-03-24T06:19:30.536Z</updated>
   <id>http://yunhenlxx.github.io/</id>
   
   <author>
@@ -21,16 +21,12 @@
     <link href="http://yunhenlxx.github.io/2021/03/24/%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B/"/>
     <id>http://yunhenlxx.github.io/2021/03/24/%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B/</id>
     <published>2021-03-24T06:11:10.000Z</published>
-    <updated>2021-03-24T06:12:54.973Z</updated>
+    <updated>2021-03-24T06:19:30.536Z</updated>
     
     <content type="html"><![CDATA[<h2 id="0x01-并发"><a href="#0x01-并发" class="headerlink" title="0x01 并发"></a>0x01 并发</h2><p>在一段时间内交替去执行多个任务</p><h2 id="0x02-并行"><a href="#0x02-并行" class="headerlink" title="0x02 并行"></a>0x02 并行</h2><p>在一段时间内真正的同时一起执行多个任务</p><h2 id="0x03-线程"><a href="#0x03-线程" class="headerlink" title="0x03 线程"></a>0x03 线程</h2><p>线程之间的执行顺序是无序的</p><h2 id="0x04-设置守护主进程"><a href="#0x04-设置守护主进程" class="headerlink" title="0x04 设置守护主进程"></a>0x04 设置守护主进程</h2><p>子进程对象.daemon = True</p><h2 id="0x05-设置守护主线程"><a href="#0x05-设置守护主线程" class="headerlink" title="0x05 设置守护主线程"></a>0x05 设置守护主线程</h2><ol><li>threading.Thread(target=方法名, daemon=True)</li><li>子线程对象.setDaemon(True)</li></ol>]]></content>
     
     
-      
-      
-    <summary type="html">&lt;h2 id=&quot;0x01-并发&quot;&gt;&lt;a href=&quot;#0x01-并发&quot; class=&quot;headerlink&quot; title=&quot;0x01 并发&quot;&gt;&lt;/a&gt;0x01 并发&lt;/h2&gt;&lt;p&gt;在一段时间内交替去执行多个任务&lt;/p&gt;
-&lt;h2 id=&quot;0x02-并行&quot;&gt;&lt;a href=&quot;#0x0</summary>
-      
+    <summary type="html">学习笔记</summary>
     
     
     
