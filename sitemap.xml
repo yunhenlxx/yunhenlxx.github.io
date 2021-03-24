@@ -2,6 +2,48 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yunhenlxx.github.io/2021/03/24/CentOS8%E4%B8%8B%E5%AE%89%E8%A3%85Docker/</loc>
+    
+    <lastmod>2021-03-24</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yunhenlxx.github.io/2021/03/24/CentOS8%E4%B8%8B%E5%AE%89%E8%A3%85Git/</loc>
+    
+    <lastmod>2021-03-24</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yunhenlxx.github.io/2021/03/24/CentOS8%E4%B8%8B%E5%AE%89%E8%A3%85Node-js%E5%92%8Cnpm/</loc>
+    
+    <lastmod>2021-03-24</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yunhenlxx.github.io/2021/03/24/CentOS8%E4%B8%8B%E6%90%AD%E5%BB%BALNMP/</loc>
+    
+    <lastmod>2021-03-24</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yunhenlxx.github.io/2021/03/24/Mac%E7%BB%88%E7%AB%AF%E8%BF%9E%E6%8E%A5%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8error/</loc>
+    
+    <lastmod>2021-03-24</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yunhenlxx.github.io/2021/03/24/Mac%E4%B8%8BSSH%E9%97%B2%E6%97%B6%E8%87%AA%E5%8A%A8%E4%B8%AD%E6%96%AD%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</loc>
+    
+    <lastmod>2021-03-24</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yunhenlxx.github.io/about/index.html</loc>
     
     <lastmod>2021-03-24</lastmod>
@@ -25,6 +67,27 @@
 
   
   <url>
+    <loc>http://yunhenlxx.github.io/tags/Docker/</loc>
+    <lastmod>2021-03-24</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yunhenlxx.github.io/tags/Linux/</loc>
+    <lastmod>2021-03-24</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yunhenlxx.github.io/tags/Mac/</loc>
+    <lastmod>2021-03-24</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://yunhenlxx.github.io/tags/Python/</loc>
     <lastmod>2021-03-24</lastmod>
     <changefreq>daily</changefreq>
@@ -32,6 +95,27 @@
   </url>
   
 
+  
+  <url>
+    <loc>http://yunhenlxx.github.io/categories/Docker/</loc>
+    <lastmod>2021-03-24</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yunhenlxx.github.io/categories/Linux/</loc>
+    <lastmod>2021-03-24</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yunhenlxx.github.io/categories/Mac/</loc>
+    <lastmod>2021-03-24</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
   
   <url>
     <loc>http://yunhenlxx.github.io/categories/Python/</loc>

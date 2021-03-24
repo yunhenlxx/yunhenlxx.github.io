@@ -6,7 +6,7 @@
   <link href="http://yunhenlxx.github.io/atom.xml" rel="self"/>
   
   <link href="http://yunhenlxx.github.io/"/>
-  <updated>2021-03-24T06:19:30.536Z</updated>
+  <updated>2021-03-24T07:40:38.116Z</updated>
   <id>http://yunhenlxx.github.io/</id>
   
   <author>
@@ -15,6 +15,138 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CentOS8下安装Docker</title>
+    <link href="http://yunhenlxx.github.io/2021/03/24/CentOS8%E4%B8%8B%E5%AE%89%E8%A3%85Docker/"/>
+    <id>http://yunhenlxx.github.io/2021/03/24/CentOS8%E4%B8%8B%E5%AE%89%E8%A3%85Docker/</id>
+    <published>2021-03-24T07:39:36.000Z</published>
+    <updated>2021-03-24T07:40:38.116Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="0x01-使用存储库安装"><a href="#0x01-使用存储库安装" class="headerlink" title="0x01 使用存储库安装"></a>0x01 使用存储库安装</h2><h3 id="设置存储库"><a href="#设置存储库" class="headerlink" title="设置存储库"></a>设置存储库</h3><p>安装yum-utils软件包并设置<strong>稳定的</strong>存储库。</p><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ sudo yum install -y yum-utils</span><br><span class="line">$ sudo yum-config-manager \</span><br><span class="line">    --add-repo \</span><br><span class="line">    https:<span class="regexp">//mi</span>rrors.aliyun.com<span class="regexp">/docker-ce/</span>linux<span class="regexp">/centos/</span>docker-ce.repo</span><br></pre></td></tr></table></figure><h3 id="安装Docker引擎"><a href="#安装Docker引擎" class="headerlink" title="安装Docker引擎"></a>安装Docker引擎</h3><p>安装<em>最新版本</em>的Docker Engine和容器：</p><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo yum install docker-<span class="keyword">ce</span> docker-<span class="keyword">ce</span>-cli containerd.io</span><br></pre></td></tr></table></figure><p>如果提示接受GPG密钥，验证指纹是否匹配 060A 61C5 1B55 8A7F 742B 77AA C52F EB6B 621E 9F35，如果是，则接受。</p><h3 id="启动并设置开机运行Docker"><a href="#启动并设置开机运行Docker" class="headerlink" title="启动并设置开机运行Docker"></a>启动并设置开机运行Docker</h3><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$</span> sudo systemctl <span class="built_in">start</span> docker</span><br><span class="line"><span class="variable">$</span> sudo systemctl enable docker</span><br></pre></td></tr></table></figure><h3 id="升级Docker引擎"><a href="#升级Docker引擎" class="headerlink" title="升级Docker引擎"></a>升级Docker引擎</h3><p>重新安装一下即可</p><h2 id="0x02-配置镜像加速器"><a href="#0x02-配置镜像加速器" class="headerlink" title="0x02 配置镜像加速器"></a>0x02 配置镜像加速器</h2><p>首先执行以下命令，查看是否在 docker.service 文件中配置过镜像地址</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$</span> systemctl <span class="built_in">cat</span> docker | grep <span class="string">&#x27;\-\-registry\-mirror&#x27;</span></span><br></pre></td></tr></table></figure><p>如果以上命令没有任何输出，那么就可以在 /etc/docker/daemon.json 中写入如下内容（如果文件不存在新建该文件）：</p><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">&quot;registry-mirrors&quot;</span>: [</span><br><span class="line">    <span class="string">&quot;https://hub-mirror.c.163.com&quot;</span>,</span><br><span class="line">    <span class="string">&quot;https://mirror.baidubce.com&quot;</span></span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>重新启动服务</p><figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>sudo systemctl daemon-reload</span><br><span class="line"><span class="variable">$ </span>sudo systemctl restart docker</span><br></pre></td></tr></table></figure><p>使用<code>docker info</code> 查看是否配置成功</p>]]></content>
+    
+    
+    <summary type="html">CentOS8下安装Docker</summary>
+    
+    
+    
+    <category term="Docker" scheme="http://yunhenlxx.github.io/categories/Docker/"/>
+    
+    
+    <category term="Docker" scheme="http://yunhenlxx.github.io/tags/Docker/"/>
+    
+    <category term="Linux" scheme="http://yunhenlxx.github.io/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CentOS8下安装Git</title>
+    <link href="http://yunhenlxx.github.io/2021/03/24/CentOS8%E4%B8%8B%E5%AE%89%E8%A3%85Git/"/>
+    <id>http://yunhenlxx.github.io/2021/03/24/CentOS8%E4%B8%8B%E5%AE%89%E8%A3%85Git/</id>
+    <published>2021-03-24T07:38:16.000Z</published>
+    <updated>2021-03-24T07:38:48.360Z</updated>
+    
+    <content type="html"><![CDATA[<p>一行命令即可</p><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum <span class="keyword">install</span> git-core</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+    <summary type="html">CentOS8下安装Git</summary>
+    
+    
+    
+    <category term="Linux" scheme="http://yunhenlxx.github.io/categories/Linux/"/>
+    
+    
+    <category term="Linux" scheme="http://yunhenlxx.github.io/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CentOS8下安装Node.js和npm</title>
+    <link href="http://yunhenlxx.github.io/2021/03/24/CentOS8%E4%B8%8B%E5%AE%89%E8%A3%85Node-js%E5%92%8Cnpm/"/>
+    <id>http://yunhenlxx.github.io/2021/03/24/CentOS8%E4%B8%8B%E5%AE%89%E8%A3%85Node-js%E5%92%8Cnpm/</id>
+    <published>2021-03-24T07:37:29.000Z</published>
+    <updated>2021-03-24T07:37:52.428Z</updated>
+    
+    <content type="html"><![CDATA[<p>Node.js 是一个跨平台的 JavaScript 运行环境，简单的说 Node.js 就是运行在服务端的 JavaScript。使用 Node.js，你可以构建扩展的网络应用。</p><p>NPM(Node Package Manager)是 Node.js 为了方便开发者使用和重用代码而开发的默认包管理器。它也是世界上用来发布开源 Node.js 包的最大软件仓库。</p><p>NVM (Node Version Manager) 是一个 bash 脚本，它允许你管理多个 Node.js 版本。通过 NVM，你可以安装或者卸载任何你想要使用或者测试的 Node.js 版本。</p><h2 id="NVM-的安装"><a href="#NVM-的安装" class="headerlink" title="NVM 的安装"></a>NVM 的安装</h2><p>在NVM的GitHub网站上复制安装命令，更新的话重新输一下命令即可</p><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -o- https:<span class="regexp">//</span>raw.githubusercontent.com<span class="regexp">/nvm-sh/</span>nvm<span class="regexp">/v0.37.1/i</span>nstall.sh | bash</span><br></pre></td></tr></table></figure><p>重新打开命令行即可使用nvm了</p><h2 id="Node-js-和-npm-的安装"><a href="#Node-js-和-npm-的安装" class="headerlink" title="Node.js 和 npm 的安装"></a>Node.js 和 npm 的安装</h2><p>运行以下命令安装最新的 Node.js 的 LTS 版本</p><figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvm install <span class="comment">--lts</span></span><br></pre></td></tr></table></figure><p>列出所有已经安装的 Node.js 版本</p><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">nvm ls</span></span><br></pre></td></tr></table></figure><p>改变当前可用的版本号</p><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvm <span class="keyword">use</span> [版本号]</span><br></pre></td></tr></table></figure><p>改变 Node.js 的默认版本</p><figure class="highlight ceylon"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvm <span class="keyword">alias</span> <span class="keyword">default</span> [版本号]</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+    <summary type="html">CentOS8下安装Node.js和npm</summary>
+    
+    
+    
+    <category term="Linux" scheme="http://yunhenlxx.github.io/categories/Linux/"/>
+    
+    
+    <category term="Linux" scheme="http://yunhenlxx.github.io/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CentOS8下搭建LNMP</title>
+    <link href="http://yunhenlxx.github.io/2021/03/24/CentOS8%E4%B8%8B%E6%90%AD%E5%BB%BALNMP/"/>
+    <id>http://yunhenlxx.github.io/2021/03/24/CentOS8%E4%B8%8B%E6%90%AD%E5%BB%BALNMP/</id>
+    <published>2021-03-24T07:36:35.000Z</published>
+    <updated>2021-03-24T07:37:06.969Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="安装和配置-Nginx"><a href="#安装和配置-Nginx" class="headerlink" title="安装和配置 Nginx"></a>安装和配置 Nginx</h2><ol><li>安装 Nginx</li></ol><p>以安装 Nginx 1.18.0 为例，可通过 <a href="http://nginx.org/packages/centos/8/x86_64/RPMS/?spm=a2c4g.11186623.2.31.557423bfYPMd6u">Ngingx 官方安装包</a> 获取适用于 CentOS 8的更多版本。</p><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">dnf</span> -y install http://nginx.org/packages/centos/<span class="number">8</span>/x<span class="number">86</span>_<span class="number">64</span>/RPMS/nginx-<span class="number">1</span>.<span class="number">18</span>.<span class="number">0</span>-<span class="number">1</span>.el<span class="number">8</span>.ngx.x<span class="number">86</span>_<span class="number">64</span>.rpm</span><br></pre></td></tr></table></figure><ol start="2"><li>查看 Nginx 版本</li></ol><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">nginx -v</span></span><br></pre></td></tr></table></figure><ol start="3"><li>查看 Nginx 配置文件路径</li></ol><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat <span class="regexp">/etc/</span>nginx/nginx.conf</span><br></pre></td></tr></table></figure><p>include 配置项的 /etc/nginx/conf.d/*.conf 即为 Nginx 配置文件的默认路径</p><ol start="4"><li>在配置文件默认路径下进行备份</li></ol><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cd</span> /etc/nginx/<span class="keyword">conf</span>.d</span><br><span class="line"><span class="keyword">cp</span> default.<span class="keyword">conf</span> *.<span class="keyword">conf</span></span><br></pre></td></tr></table></figure><ol start="5"><li>打开 *.conf 文件</li></ol><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">vim</span> <span class="regexp">*.conf</span></span><br></pre></td></tr></table></figure><ol start="6"><li>编辑 default.conf 文件</li></ol><ul><li><p>在 location 的 index 项中添加 index.php</p></li><li><p>删除 location ~ .php$ 大括号前的 #，并修改以下配置项：</p></li><li><ul><li>修改 root 项为网站根目录，即 location 中的 root 项，本文以 /usr/share/nginx/html; 为例</li><li>修改 fastcgi_pass 项为 unix:/run/php-fpm/<a href="http://www.sock/">www.sock</a>;</li><li>将 fastcgi_param SCRIPT_FILENAME 后的 /scripts$fastcgi_script_name; 替换为 $document_root$fastcgi_script_name;</li></ul></li></ul><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">location ~ \.php$ &#123;</span><br><span class="line">    root          <span class="regexp">/usr/</span>share<span class="regexp">/nginx/</span>html;</span><br><span class="line">    fastcgi_pass  unix:<span class="regexp">/run/</span>php-fpm/www.sock;</span><br><span class="line">    fastcgi_index index.php;</span><br><span class="line">    fastcgi_param SCRIPT_FILENAME <span class="variable">$document_root</span><span class="variable">$fastcgi_script_name</span>;</span><br><span class="line">    include       fastcgi_params;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><ol start="7"><li>启动Nginx并设置为开机自启动并查看状态</li></ol><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">systemctl <span class="keyword">start</span> nginx</span><br><span class="line">systemctl <span class="keyword">enable</span> nginx</span><br><span class="line">systemctl status nginx</span><br></pre></td></tr></table></figure><h2 id="安装和配置MySQL"><a href="#安装和配置MySQL" class="headerlink" title="安装和配置MySQL"></a>安装和配置MySQL</h2><ol><li>安装 MySQL</li></ol><figure class="highlight aspectj"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dnf -y install <span class="meta">@mysql</span></span><br></pre></td></tr></table></figure><ol start="2"><li>查看 MySQL 版本</li></ol><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">mysql -V</span></span><br></pre></td></tr></table></figure><ol start="3"><li>启动 MySQL 并设置为开机自启动并查看状态</li></ol><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">systemctl <span class="keyword">start</span> mysqld</span><br><span class="line">systemctl <span class="keyword">enable</span> mysqld</span><br><span class="line">systemctl status mysqld</span><br></pre></td></tr></table></figure><ol start="4"><li>执行 MySQL 安全性操作并设置密码</li></ol><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">mysql_secure_installation</span></span><br></pre></td></tr></table></figure><p>按照以下步骤，执行对应操作：</p><ul><li><p>输入 y 并按 <strong>Enter</strong> 开始相关配置。</p></li><li><p>选择密码验证策略强度，建议选择高强度的密码验证策略。输入 2 并按 <strong>Enter</strong>。</p></li><li><ul><li>0：表示低。</li><li>1：表示中。</li><li>2：表示高。</li></ul></li><li><p>设置 MySQL 密码并按 <strong>Enter</strong> ，输入密码默认不显示。</p></li><li><p>再次输入密码并按 <strong>Enter</strong>，输入 y 确认设置该密码。</p></li><li><p>输入 y 并按 <strong>Enter</strong>，移除匿名用户。</p></li><li><p>设置是否禁止远程连接 MySQL：</p></li><li><ul><li>禁止远程连接：输入 y 并按 <strong>Enter</strong>。</li><li>允许远程连接：输入 n 并按 <strong>Enter</strong>。</li></ul></li><li><p>输入 y 并按 <strong>Enter</strong>，删除 test 库及对 test 库的访问权限。</p></li><li><p>输入 y 并按 <strong>Enter</strong>，重新加载授权表。</p></li></ul><h2 id="安装和配置PHP"><a href="#安装和配置PHP" class="headerlink" title="安装和配置PHP"></a>安装和配置PHP</h2><ol><li>添加并更新 epel 源</li></ol><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dnf -y install epel-<span class="keyword">release</span></span><br><span class="line">dnf <span class="keyword">update</span> epel-<span class="keyword">release</span></span><br></pre></td></tr></table></figure><ol start="2"><li>删除缓存的无用软件包并更新软件源</li></ol><figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dnf clean <span class="keyword">all</span></span><br><span class="line">dnf makecache</span><br></pre></td></tr></table></figure><ol start="3"><li>安装 remi 源</li></ol><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dnf -y install https:<span class="regexp">//</span>rpms.remirepo.net<span class="regexp">/enterprise/</span>remi-release-<span class="number">8</span>.rpm</span><br></pre></td></tr></table></figure><ol start="4"><li>启动 PHP 7.4 模块</li></ol><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">dnf</span> module install php:remi-<span class="number">7</span>.<span class="number">4</span></span><br></pre></td></tr></table></figure><ol start="5"><li>安装所需 PHP 对应模块</li></ol><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dnf install php php-curl php-dom php-exif php-file<span class="literal">inf</span>o php-fpm php-gd php-hash php-json php-mbstring php-mysqli php-openssl php-pcre php-<span class="keyword">xml</span> <span class="title">libsodium</span></span><br></pre></td></tr></table></figure><ol start="6"><li>查看 PHP 版本</li></ol><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">php -v</span></span><br></pre></td></tr></table></figure><ol start="7"><li>打开 <a href="http://www.conf/">www.conf</a> 文件</li></ol><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi <span class="regexp">/etc/</span>php-fpm.d/www.conf</span><br></pre></td></tr></table></figure><ol start="8"><li>将 user = apache 及 group = apache 修改为 user = nginx 及 group = nginx</li><li>启动 PHP-FPM 并设置为开机自启动并查看状态</li></ol><figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">systemctl <span class="keyword">start</span> php-fpm</span><br><span class="line">systemctl <span class="keyword">enable</span> php-fpm</span><br><span class="line">systemctl status php-fpm</span><br></pre></td></tr></table></figure><h2 id="验证环境配置"><a href="#验证环境配置" class="headerlink" title="验证环境配置"></a>验证环境配置</h2><p>/usr/share/nginx/html 为 Nginx 中已配置的网站根目录</p><ol><li>创建测试文件</li></ol><figure class="highlight php-template"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml">echo &quot;</span><span class="php"><span class="meta">&lt;?php</span> phpinfo(); <span class="meta">?&gt;</span></span><span class="xml">&quot; &gt;&gt; /usr/share/nginx/html/index.php</span></span><br></pre></td></tr></table></figure><ol start="2"><li>在本地浏览器中访问服务器公网IP，查看环境配置是否成功</li></ol><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http:<span class="regexp">//</span>云服务器实例的公网 IP/index.php</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+    <summary type="html">CentOS8下搭建LNMP</summary>
+    
+    
+    
+    <category term="Linux" scheme="http://yunhenlxx.github.io/categories/Linux/"/>
+    
+    
+    <category term="Linux" scheme="http://yunhenlxx.github.io/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Mac下SSH闲时自动中断解决方法</title>
+    <link href="http://yunhenlxx.github.io/2021/03/24/Mac%E4%B8%8BSSH%E9%97%B2%E6%97%B6%E8%87%AA%E5%8A%A8%E4%B8%AD%E6%96%AD%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/"/>
+    <id>http://yunhenlxx.github.io/2021/03/24/Mac%E4%B8%8BSSH%E9%97%B2%E6%97%B6%E8%87%AA%E5%8A%A8%E4%B8%AD%E6%96%AD%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</id>
+    <published>2021-03-24T07:25:56.000Z</published>
+    <updated>2021-03-24T07:30:44.791Z</updated>
+    
+    <content type="html"><![CDATA[<p>使用Mac自带的终端SSH连接服务器的时候，只要隔一小段时间不操作的话连接就会自动中断.</p><p>解决方法：</p><ol><li>连接到服务器</li><li>编辑服务端配置文件</li></ol><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim <span class="regexp">/etc/</span>ssh/sshd_config</span><br></pre></td></tr></table></figure><ol start="3"><li>在最下面添加两行配置代码</li></ol><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">ClientAliveInterval</span> <span class="number">30</span></span><br><span class="line"><span class="attribute">ClientAliveCountMax</span> <span class="number">3</span></span><br></pre></td></tr></table></figure><ol start="4"><li>编辑客户端配置文件</li></ol><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim <span class="regexp">/etc/</span>ssh/ssh_config</span><br></pre></td></tr></table></figure><ol start="5"><li>在Host * 下面添加两行配置代码</li></ol><figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">ServerAliveInterval</span> <span class="number">30</span></span><br><span class="line"><span class="attribute">ServerAliveCountMax</span> <span class="number">3</span></span><br></pre></td></tr></table></figure><ol start="6"><li>同步数据然后重启</li></ol><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sync<span class="regexp">//</span> 将数据由内存同步到硬盘</span><br><span class="line">reboot<span class="regexp">//</span> 重启</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+    <summary type="html">Mac下SSH闲时自动中断解决方法</summary>
+    
+    
+    
+    <category term="Mac" scheme="http://yunhenlxx.github.io/categories/Mac/"/>
+    
+    
+    <category term="Mac" scheme="http://yunhenlxx.github.io/tags/Mac/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Mac终端连接云服务器出错</title>
+    <link href="http://yunhenlxx.github.io/2021/03/24/Mac%E7%BB%88%E7%AB%AF%E8%BF%9E%E6%8E%A5%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8error/"/>
+    <id>http://yunhenlxx.github.io/2021/03/24/Mac%E7%BB%88%E7%AB%AF%E8%BF%9E%E6%8E%A5%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8error/</id>
+    <published>2021-03-24T07:11:42.000Z</published>
+    <updated>2021-03-24T07:31:05.695Z</updated>
+    
+    <content type="html"><![CDATA[<p>删除 <code>~/.ssh/known_hosts</code> 即可重新连接成功</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;删除 &lt;code&gt;~/.ssh/known_hosts&lt;/code&gt; 即可重新连接成功&lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    <category term="Mac" scheme="http://yunhenlxx.github.io/categories/Mac/"/>
+    
+    
+    <category term="Mac" scheme="http://yunhenlxx.github.io/tags/Mac/"/>
+    
+  </entry>
   
   <entry>
     <title>进程与线程</title>
