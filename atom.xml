@@ -6,7 +6,7 @@
   <link href="http://yunhenlxx.github.io/atom.xml" rel="self"/>
   
   <link href="http://yunhenlxx.github.io/"/>
-  <updated>2021-03-24T07:57:28.478Z</updated>
+  <updated>2021-03-24T07:59:02.895Z</updated>
   <id>http://yunhenlxx.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://yunhenlxx.github.io/2021/03/24/%E9%AA%8C%E8%AF%81%E7%A0%81%E7%BB%95%E8%BF%87%E3%80%81%E5%AF%86%E7%A0%81%E6%89%BE%E5%9B%9E%E6%BC%8F%E6%B4%9E/"/>
     <id>http://yunhenlxx.github.io/2021/03/24/%E9%AA%8C%E8%AF%81%E7%A0%81%E7%BB%95%E8%BF%87%E3%80%81%E5%AF%86%E7%A0%81%E6%89%BE%E5%9B%9E%E6%BC%8F%E6%B4%9E/</id>
     <published>2021-03-24T07:56:57.000Z</published>
-    <updated>2021-03-24T07:57:28.478Z</updated>
+    <updated>2021-03-24T07:59:02.895Z</updated>
     
     <content type="html"><![CDATA[<h2 id="0x01-验证码绕过"><a href="#0x01-验证码绕过" class="headerlink" title="0x01 验证码绕过"></a>0x01 验证码绕过</h2><h3 id="两个流派"><a href="#两个流派" class="headerlink" title="两个流派"></a>两个流派</h3><ol><li>脚本流派（机器学习）</li><li>逻辑流派（寻找验证码的逻辑漏洞）</li></ol><h3 id="前端验证验证码，没有后端验证"><a href="#前端验证验证码，没有后端验证" class="headerlink" title="前端验证验证码，没有后端验证"></a>前端验证验证码，没有后端验证</h3><p>直接抓包进行跑数据包</p><h3 id="验证码设置了但是没有校验"><a href="#验证码设置了但是没有校验" class="headerlink" title="验证码设置了但是没有校验"></a>验证码设置了但是没有校验</h3><p>乱输入验证码也能够登录</p><h3 id="验证码可重复使用"><a href="#验证码可重复使用" class="headerlink" title="验证码可重复使用"></a>验证码可重复使用</h3><p>虽然登录失败验证码会变，但是输入原先的验证码也判定正确</p><h3 id="验证码空值绕过"><a href="#验证码空值绕过" class="headerlink" title="验证码空值绕过"></a>验证码空值绕过</h3><p>抓包将验证码的参数删除，发现验证码失效了</p><h3 id="验证码干扰过低"><a href="#验证码干扰过低" class="headerlink" title="验证码干扰过低"></a>验证码干扰过低</h3><p>使用脚本识别</p><h3 id="验证码会在HTML页面输出"><a href="#验证码会在HTML页面输出" class="headerlink" title="验证码会在HTML页面输出"></a>验证码会在HTML页面输出</h3><h3 id="验证码可控制"><a href="#验证码可控制" class="headerlink" title="验证码可控制"></a>验证码可控制</h3><p>验证码包含在URL里面</p><h3 id="验证码有规则"><a href="#验证码有规则" class="headerlink" title="验证码有规则"></a>验证码有规则</h3><p>比如是时间戳的后六位、rand函数进行随机数</p><h3 id="万能验证码"><a href="#万能验证码" class="headerlink" title="万能验证码"></a>万能验证码</h3><p>验证码无论是什么，输入000000就能直接绕过</p><h3 id="验证码有时候会藏在Cookie里"><a href="#验证码有时候会藏在Cookie里" class="headerlink" title="验证码有时候会藏在Cookie里"></a>验证码有时候会藏在Cookie里</h3><p>分析是否存在验证码的参数</p><h3 id="图片验证码"><a href="#图片验证码" class="headerlink" title="图片验证码"></a>图片验证码</h3><p>类型太少，容易识别</p><h3 id="多次登录后出现验证码"><a href="#多次登录后出现验证码" class="headerlink" title="多次登录后出现验证码"></a>多次登录后出现验证码</h3><ul><li>基于Session</li><li>基于IP：XFF、UA</li><li>基于用户：爆破用户名</li></ul><h2 id="0x02-密码找回漏洞"><a href="#0x02-密码找回漏洞" class="headerlink" title="0x02 密码找回漏洞"></a>0x02 密码找回漏洞</h2><h3 id="验证码发送后前端返回"><a href="#验证码发送后前端返回" class="headerlink" title="验证码发送后前端返回"></a>验证码发送后前端返回</h3><p>抓包后在返回包里有验证码</p><h3 id="验证码无次数限制可爆破"><a href="#验证码无次数限制可爆破" class="headerlink" title="验证码无次数限制可爆破"></a>验证码无次数限制可爆破</h3><h3 id="验证码可控"><a href="#验证码可控" class="headerlink" title="验证码可控"></a>验证码可控</h3><p>验证码写在URL参数里面</p><h3 id="直接修改密码页面"><a href="#直接修改密码页面" class="headerlink" title="直接修改密码页面"></a>直接修改密码页面</h3><p>跳过验证码页面</p><h3 id="越权漏洞"><a href="#越权漏洞" class="headerlink" title="越权漏洞"></a>越权漏洞</h3><p>自己验证码通过改包然后修改他们密码</p>]]></content>
     
@@ -180,9 +180,9 @@
     <category term="Linux" scheme="http://yunhenlxx.github.io/categories/Linux/"/>
     
     
-    <category term="Docker" scheme="http://yunhenlxx.github.io/tags/Docker/"/>
-    
     <category term="Linux" scheme="http://yunhenlxx.github.io/tags/Linux/"/>
+    
+    <category term="Docker" scheme="http://yunhenlxx.github.io/tags/Docker/"/>
     
   </entry>
   
